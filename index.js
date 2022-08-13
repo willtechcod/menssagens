@@ -15,8 +15,7 @@ app.post('/contact', async (req, res) => {
         to: 'William Pereira <dev.pereira2019@gmail.com',
         subject: 'Uma nova mensagem vinda do seu portfólio acabou de chegar.',
         html: [
-            `<meta charset="utf-8"/>`
-                `<section style="font-family: Arial, Helvetica, sans-serif; font-size: 1rem; background-color: #ebf0f6; ">`,
+            `<section style="font-family: Arial, Helvetica, sans-serif; font-size: 1rem; background-color: #ebf0f6; ">`,
             `<div style="display: flex; padding-top: 1rem;  margin: auto; justify-content: center; width: 100%;">`,
             `<img style="margin: auto;" width="300px" src="#" alt="Back">`,
             `</div>`,
@@ -51,9 +50,9 @@ app.listen(process.env.PORT || PORT, () => {
 const transport = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 587,
-    secure: true,
+    secure: false,
     auth: {
-        user: "dev.pereira2019@gmail.com",
+        user: "willskt123@gmail.com",
         pass: "skt245186"
     }
 });
