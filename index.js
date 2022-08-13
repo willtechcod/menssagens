@@ -7,6 +7,19 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
+
+app.get("/server", async (req, res) => {
+    try {
+        res.json({
+            status: 200,
+            message: "Servidor de SMTP no AR!",
+        });
+    } catch (error) {
+        console.log(error);
+        return res.status(500).send("Erro : Servidor fora do ar!");
+    }
+});
+
 app.post('/contact', async (req, res) => {
     let { comment, email, name } = req.body
 
