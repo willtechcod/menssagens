@@ -7,19 +7,6 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
-
-app.get("/server", async (req, res) => {
-    try {
-        res.json({
-            status: 200,
-            message: "Servidor de SMTP no AR!",
-        });
-    } catch (error) {
-        console.log(error);
-        return res.status(500).send("Erro : Servidor fora do ar!");
-    }
-});
-
 app.post('/contact', async (req, res) => {
     let { comment, email, name } = req.body
 
@@ -30,11 +17,11 @@ app.post('/contact', async (req, res) => {
         html: [
             `<section style="font-family: Arial, Helvetica, sans-serif; font-size: 1rem; background-color: #ebf0f6; ">`,
             `<div style="display: flex; padding-top: 1rem;  margin: auto; justify-content: center; width: 100%;">`,
-            `<img style="margin: auto;" width="300px" src="#" alt="Back">`,
+            `<img style="margin: auto;" width="300px" src="https://i.imgur.com/dBz4Z9p.png" alt="Back">`,
             `</div>`,
             `<section style="background-color: #fff; border-radius: 1rem; width: 75%; display: flex; margin: auto; margin-top: 1rem; padding: 2rem;">`,
             `<div style=" margin: auto;">`,
-            `<img style="border-radius: 0.5rem" width="100%" src="#" alt="Backs">`,
+            `<img style="border-radius: 0.5rem" width="100%" src="https://i.imgur.com/LDI25xB.png" alt="Backs">`,
             `<h3 style="text-align: center; font-weight: 500;">Olhe a mensagem abaixo! 🎉</h3>`,
             `<br>`,
             `<p style="font-style: italic; font-weight: 600;">"${comment}"</p>`,
@@ -46,7 +33,7 @@ app.post('/contact', async (req, res) => {
             `</div>`,
             `</section>`,
             `<div style="display: flex; padding-top: 1rem; padding-bottom: 1rem; margin: auto; width: 100%;">`,
-            `<h6 style="margin: auto;">Sistema desenvolvido por: <a style="text-decoration: none; color: #24549c" href="#">willtechcode</a></h6>`,
+            `<h6 style="margin: auto;">Sistema desenvolvido por: <a style="text-decoration: none; color: #24549c" href="http://links.willtechcod.com/">willtechcode</a></h6>`,
             `</div>`,
             `</section>`
         ].join('\n')
@@ -62,8 +49,8 @@ app.listen(process.env.PORT || PORT, () => {
 
 const transport = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
         user: "willskt123@gmail.com",
         pass: "skt245186"
