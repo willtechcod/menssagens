@@ -3,6 +3,10 @@ import express from 'express'
 import nodemailer from 'nodemailer'
 import cors from 'cors'
 
+let user = process.env.USER;
+let pass = process.env.PASS;
+
+
 const app = express();
 app.use(express.json())
 app.use(cors())
@@ -52,7 +56,7 @@ const transport = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: "willskt123@gmail.com",
-        pass: "skt245186"
+        user: "dev.pereira2019@gmail.com",
+        pass: "incnuzhocbheabcs",
     }
 });
