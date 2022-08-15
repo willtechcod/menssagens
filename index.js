@@ -1,10 +1,10 @@
+import 'dotenv/config'
 const PORT = 5000
 import express from 'express'
 import nodemailer from 'nodemailer'
 import cors from 'cors'
 
-let user = process.env.USER;
-let pass = process.env.PASS;
+
 
 
 const app = express();
@@ -56,7 +56,7 @@ const transport = nodemailer.createTransport({
     port: 465,
     secure: true,
     auth: {
-        user: "dev.pereira2019@gmail.com",
-        pass: "incnuzhocbheabcs",
+        user: process.env.USER,
+        pass: process.env.PASS,
     }
 });
