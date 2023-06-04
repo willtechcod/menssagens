@@ -16,7 +16,7 @@ app.post('/contact', async (req, res) => {
 
     return res.status(201).send(await transport.sendMail({
         from: 'William Pereira | Portfólio',
-        to: 'William Pereira <dev.pereira2019@gmail.com',
+        to: 'dev.pereira2019@gmail.com',
         subject: 'Uma nova mensagem vinda do seu portfólio acabou de chegar.',
         html: [
             `<section style="font-family: Arial, Helvetica, sans-serif; font-size: 1rem; background-color: #ebf0f6; ">`,
