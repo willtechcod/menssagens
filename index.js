@@ -54,7 +54,7 @@ app.listen(process.env.PORT || PORT, () => {
 const transport = nodemailer.createTransport({
     host: 'smtp.gmail.com',
     port: 465,
-    secure: true,
+    secure: false,
     auth: {
         user: process.env.USER,
         pass: process.env.PASS,
